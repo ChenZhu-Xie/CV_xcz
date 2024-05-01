@@ -17,16 +17,57 @@
 \usepackage{simplecv}
 
 \usepackage{ctex}
-\usepackage{fontawesome5}
-\usepackage{academicons}
-\definecolor{orcidlogocol}{HTML}{A6CE39}
 \usepackage{tabularx}
+
 % \usepackage{hwemoji}
 % \usepackage{emotion}
 \usepackage{emoji}
-\usepackage{libertine}
+
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\definecolor{orcid_green}{HTML}{A6CE39}
 \usepackage{color}
+\definecolor{linkedin_blue}{RGB}{10,102,194}
+\definecolor{youtube_red}{RGB}{255,0,0}
+\definecolor{google_blue}{RGB}{66,133,244}
+\definecolor{email_blue}{RGB}{28,108,176}
+
 \usepackage{import}
+\usepackage{amssymb}
+
+\usepackage{libertine}  % for \LKey{5}
+\usepackage[most]{tcolorbox}
+\definecolor{google_yellow}{RGB}{244,180,0}
+\newtcbox{\inlinebox}[1][]{enhanced,
+	box align=base,
+	nobeforeafter,
+	colback=google_yellow,
+	size=small,
+	boxrule=0pt,
+	left=0pt, right=0pt,
+	boxsep=2pt,
+	arc=5pt,
+	fontupper=\color{white},
+	#1}
+%\newcommand{\mylinkbox}[1]{\inlinebox{$\blacktriangleright$  \nameref{#1}}}
+\newcommand{\mylinkbox}[1]{\inlinebox{#1}}
+
+%\usepackage{tikz}
+%\usetikzlibrary{shadows}
+%\newcommand*\keystroke[1]{%
+%	\tikz[baseline=(key.base)]
+%	\node[%
+%	draw,
+%	fill=white,
+%	drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+%	rectangle,
+%	rounded corners=2pt,
+%	inner sep=1pt,
+%	line width=0.5pt,
+%	font=\scriptsize\sffamily
+%	](key) {#1\strut}
+%	;
+%}
 
 \boldname{Surname}{Name}{N.}
 
@@ -34,11 +75,19 @@
 
 % Heading
 \headinginline{Chen-Zhu Xie \hspace{3em} 谢尘竹}{
-    Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}\faLinkedin} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}\faYoutube} \\ 
-    Contact: \href{mailto:email@xczphysics@outlook.com}{\raisebox{-0.05\height}\faEnvelope} \ \href{https://twitter.com/xczphysics}{\raisebox{-0.05\height}\faTwitter} \\
-    Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height}\aiOrcid} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}\aiGoogleScholar} \\
-    Personality: \emoji{aries} \emoji{ab} \LKey{INTP}
+	Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}{\color{youtube_red}\faYoutube}} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}{\color{linkedin_blue}\faLinkedin}} \\ 
+	Contact: \href{mailto:email@xczphysics@outlook.com}{\raisebox{-0.05\height}{\color{email_blue}\faEnvelope}} \ \href{https://twitter.com/xczphysics}{$\mathbb{X}$} \\
+	Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height} {\color{orcid_green}\aiOrcid}} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}{\color{google_blue}\aiGoogleScholar}} \\
+	Personality: \href{https://en.wikipedia.org/wiki/Aries_(constellation)}{\raisebox{-0.05\height} {\emoji{aries}}} \href{https://en.wikipedia.org/wiki/Myers-Briggs_Type_Indicator}{\mylinkbox{INTP}} \href{https://en.wikipedia.org/wiki/ABO_blood_group_system}{\raisebox{-0.05\height} {\emoji{ab}}} \hspace{-.45em}
 }
+
+% Heading
+%\headinginline{Chen-Zhu Xie \hspace{3em} 谢尘竹}{
+%    Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}\faLinkedin} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}\faYoutube} \\ 
+%    Contact: \href{mailto:email@xczphysics@outlook.com}{\raisebox{-0.05\height}\faEnvelope} \ \href{https://twitter.com/xczphysics}{\raisebox{-0.05\height}\faTwitter} \\
+%    Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height}\aiOrcid} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}\aiGoogleScholar} \\
+%    Personality: \emoji{aries} \emoji{ab} \LKey{INTP}
+%}
 
 % \headingphoto{Name Surname}{
 %     Website: \website{example.com} \\ 
