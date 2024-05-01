@@ -1,0 +1,66 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+% Choose bibliography style for formatting list of publications
+\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\bibliography{papers}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+% \def\theme{MidnightBlue}
+\def\theme{RedViolet}
+
+% More predefined colors can be found in 
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+% Example photograph taken from Wikimedia Commons
+% https://commons.wikimedia.org/wiki/File:Kiara_Krit_passport.jpg
+
+\usepackage{simplecv}
+
+\usepackage{ctex}
+\usepackage{fontawesome5}
+\usepackage{academicons}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\usepackage{tabularx}
+% \usepackage{hwemoji}
+% \usepackage{emotion}
+\usepackage{emoji}
+\usepackage{libertine}
+\usepackage{color}
+\usepackage{import}
+
+\boldname{Surname}{Name}{N.}
+
+\begin{document}
+
+% Heading
+\headinginline{Chen-Zhu Xie \hspace{3em} 谢尘竹}{
+    Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}\faLinkedin} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}\faYoutube} \\ 
+    Contact: \href{mailto:email@xczphysics@outlook.com}{\raisebox{-0.05\height}\faEnvelope} \ \href{https://twitter.com/xczphysics}{\raisebox{-0.05\height}\faTwitter} \\
+    Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height}\aiOrcid} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}\aiGoogleScholar} \\
+    Personality: \emoji{aries} \emoji{ab} \LKey{INTP}
+}
+
+% \headingphoto{Name Surname}{
+%     Website: \website{example.com} \\ 
+%     Email: \email{example@example.edu} \\
+%     LinkedIn: \linkedin{name-surname} \\
+%     GitHub: \github{example}
+% }{photo.jpg}
+
+% Page One
+\import{sections/}{experience.tex}
+\import{sections/}{education.tex}
+\import{sections/}{publications.tex}
+
+\pagebreak
+
+% Page Two
+\import{sections/}{teaching.tex}
+\sidebyside
+    {\import{sections/}{skills.tex}}
+    {\import{sections/}{languages.tex}}
+\import{sections/}{projects.tex}
+\import{sections/}{awards.tex}
+\import{sections/}{extracurricular.tex}
+
+\end{document}
