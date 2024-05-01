@@ -51,10 +51,6 @@
 
 [![High N.A. - Vector NLAST.pdf](https://github.com/ChenZhu-Xie/PhD_academia/raw/master/img/8.1__@page_125_←_Python__4.0_year_-_2024.3.12.png)](https://github.com/ChenZhu-Xie/PhD_academia/blob/master/2__2.1__Side_Projects_for_Myself/8.1__高_N.A._矢量_紧聚焦_←_Python__4.0_year_-_2024.3.12.pdf "High N.A. - Vector NLAST.pdf")
 
-<!-- test -->
-
-<!-- g -->
-
 <!-- ## Software Architecture
 Software architecture description
 
