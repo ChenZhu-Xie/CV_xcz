@@ -31,6 +31,7 @@
 \definecolor{youtube_red}{RGB}{255,0,0}
 \definecolor{google_blue}{RGB}{66,133,244}
 \definecolor{email_blue}{RGB}{28,108,176}
+\definecolor{internet_blue}{RGB}{15,79,155}
 
 \usepackage{import}
 \usepackage{amssymb}
@@ -69,6 +70,8 @@
 %	;
 %}
 
+\usepackage{hyperref}
+
 \boldname{Surname}{Name}{N.}
 
 \begin{document}
@@ -97,8 +100,8 @@
 % }{photo.jpg}
 
 % Page One
-\import{sections/}{experience.tex}
 \import{sections/}{education.tex}
+\import{sections/}{experience.tex}
 \import{sections/}{publications.tex}
 
 \pagebreak
