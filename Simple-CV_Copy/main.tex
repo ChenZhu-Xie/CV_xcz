@@ -71,6 +71,42 @@
 %}
 
 \usepackage{hyperref}
+%\renewcommand*{\thefootnote}{\arabic{footnote}}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+%\usepackage{mdframed}
+%\makesavenoteenv{mdframed} % Make mdframed pushes all footnotes to the end of the page
+%\usepackage{footnotehyper}
+%\let\thempfootnote\thefootnote % Fix \footnotetext inside boxes causing numbers to disappear at the end of the page
+
+%\makeatletter
+%\newtoks\FTN@ftn
+%\def\pushftn{%
+%	\let\@footnotetext\FTN@ftntext\let\@xfootnotenext\FTN@xftntext
+%	\let\@xfootnote\FTN@xfootnote}
+%\def\popftn{%
+%	\global\FTN@ftn\expandafter{\expandafter}\the\FTN@ftn}
+%\long\def\FTN@ftntext#1{%
+%	\edef\@tempa{\the\FTN@ftn\noexpand\footnotetext
+%		[\the\csname c@\@mpfn\endcsname]}%
+%	\global\FTN@ftn\expandafter{\@tempa{#1}}}%
+%\long\def\FTN@xftntext[#1]#2{%
+%	\global\FTN@ftn\expandafter{\the\FTN@ftn\footnotetext[#1]{#2}}}
+%\def\FTN@xfootnote[#1]{%
+%	\begingroup
+%	\csname c@\@mpfn\endcsname #1\relax
+%	\unrestored@protected@xdef\@thefnmark{\thempfn}%
+%	\endgroup
+%	\@footnotemark\FTN@xftntext[#1]}
+%\makeatother
+
+%\usepackage{tablefootnote}
+%\makeatletter
+%\newcommand{\spewfootnotes}{%
+%	\tfn@tablefootnoteprintout%
+%	\global\let\tfn@tablefootnoteprintout\relax%
+%	\gdef\tfn@fnt{0}%
+%}
+%\makeatother
 
 \boldname{Surname}{Name}{N.}
 
