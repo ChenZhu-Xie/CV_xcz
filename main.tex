@@ -108,6 +108,11 @@
 %}
 %\makeatother
 
+\usepackage{makecell}
+\NewExpandableDocumentCommand\XGap{m}{\noalign{\vskip #1}}
+\NewExpandableDocumentCommand\Gap{}{\XGap{3pt}}
+\usepackage{multirow}
+
 \boldname{Surname}{Name}{N.}
 
 \begin{document}
