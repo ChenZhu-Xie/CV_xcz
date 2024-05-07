@@ -14,14 +14,23 @@
 %======================================
 % gradient function!
 \newcommand{\gradient}[1]{
-    % The values are calculated linearly between \minval and \maxval
-    \ifdimcomp{#1pt}{>}{\maxval pt}{#1}{
-    \ifdimcomp{#1pt}{<}{\minval pt}{#1}{
-         \pgfmathparse{int(round(100*(#1/(\maxval-\minval))-(\minval*(100/(\maxval-\minval)))))}
-        \xdef\tempa{\pgfmathresult}
-        \cellcolor{high!\tempa!low!\opacity} #1
-    }}
- }
+	% The values are calculated linearly between \minval and \maxval
+	\ifdimcomp{#1pt}{>}{\maxval pt}{#1}{
+		\ifdimcomp{#1pt}{<}{\minval pt}{#1}{
+			\pgfmathparse{int(round(100*(#1/(\maxval-\minval))-(\minval*(100/(\maxval-\minval)))))}
+			\xdef\tempa{\pgfmathresult}
+			\cellcolor{high!\tempa!low!\opacity}
+	}}
+}
+%\newcommand{\gradient}[1]{
+%    % The values are calculated linearly between \minval and \maxval
+%    \ifdimcomp{#1pt}{>}{\maxval pt}{#1}{
+%    \ifdimcomp{#1pt}{<}{\minval pt}{#1}{
+%         \pgfmathparse{int(round(100*(#1/(\maxval-\minval))-(\minval*(100/(\maxval-\minval)))))}
+%        \xdef\tempa{\pgfmathresult}
+%        \cellcolor{high!\tempa!low!\opacity} #1
+%    }}
+% }
 %======================================
 % gradient function single cell! 
 \newcommand{\gradientcell}[6]{
