@@ -114,8 +114,17 @@
 \NewExpandableDocumentCommand\Gap{}{\XGap{3pt}}
 \usepackage{multirow}
 \usepackage{amssymb}
-\usepackage{highlight}
-\renewcommand{\opacity}{50}
+%\usepackage{highlight}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\definecolor{MS_Red}{HTML}{F14F21}
+\definecolor{MS_Green}{HTML}{7EB900}
+\definecolor{MS_Blue}{HTML}{00A3EE}
+\definecolor{MS_Yellow}{HTML}{FEB800}
+\definecolor{MS_Gray}{HTML}{727272}
+\newcommand*{\opacity}{25}
+\newcommand{\cellcolorback}[1]{
+	\cellcolor{#1!\opacity}
+}
 
 \boldname{Surname}{Name}{N.}
 
