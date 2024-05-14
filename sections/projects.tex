@@ -3,29 +3,36 @@
 
 \denseouterlist{
 	
-\entrybig{
-
-\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{10.6cm} @{\extracolsep{\fill}} C{2.65cm} @{}}
-	\rowcolor[gray]{.9}
-	\textbf{3D Vector Nonlinear} Fourier Crystal Optics & Analytic solution {\small $ \boldsymbol{E} \! \left( \boldsymbol r \right) $} to {\small $\left[ \left( \boldsymbol{\nabla} \times \right)^2 - k^{2}_{0} \;\! \bar{\bar{\boldsymbol{\varepsilon}}} \;\! \cdot \right] \! \boldsymbol{E} \! \left( \boldsymbol r \right) = k^{2}_{0} \;\! \boldsymbol \bar{\bar{\bar{\boldsymbol \chi}}} \colon \! \mathcal F^{-1}_\omega \! \left[ \widetilde{\boldsymbol E}_\mathrm{p} \widetilde{\boldsymbol E}_\mathrm{p} \right]  $} & 2017.03\hfill\textendash\hfill 2018.09 \newline \phantom{d} \newline \small Python\ |\ SiYuan\ |\ Mathematica \\ \Gap\Gap
+%\entrybig{
+\item[]{
+\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{12.0cm} @{\extracolsep{\fill}} r @{}}
+%	\rowcolor[gray]{.9}
+	\textbf{3D Vector Nonlinear} \newline \vspace{-3pt} {\small Fourier Crystal Optics} & \textbf{Solving} \dbox{\colorbox{white}{\small $\left[ \left( \boldsymbol{\nabla} \times \right)^2 - k^{2}_{0} \;\! \bar{\bar{\boldsymbol{\varepsilon}}} \;\! \cdot \right] \! {\color{blue} \boldsymbol{E} \! \left( \boldsymbol r \right)} = k^{2}_{0} \;\! \bar{\bar{\bar{\boldsymbol \chi}}} \colon \! \mathcal F^{-1}_\omega \! \left[ \widetilde{\boldsymbol E}_\mathrm{p} \widetilde{\boldsymbol E}_\mathrm{p} \right] \! \left( \boldsymbol r \right)$}} \textbf{analytically} \newline $\bullet$ test & 2023.05 \\ \Gap\Gap
 \end{tabularx}
 \\
-\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{10.6cm} @{\extracolsep{\fill}} C{2.65cm} @{}}
-	\rowcolor[gray]{.9}
-	\textbf{Complex Vector Linear} Fourier Crystal Optics & Analytic solution {\small $ \boldsymbol{E} \! \left( \boldsymbol r \right) $} to {\small $\left[ \left( \boldsymbol{\nabla} \times \right)^2 - k^{2}_{0} \;\! \bar{\bar{\boldsymbol{\varepsilon}}} \;\! \cdot \right] \! \boldsymbol{E} \! \left( \boldsymbol r \right) = \boldsymbol{0}$} & 2017.03\hfill\textendash\hfill 2018.09 \newline \phantom{d} \newline \small Python\ |\ SiYuan\ |\ Mathematica \\ \Gap\Gap
+\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{12.0cm} @{\extracolsep{\fill}} r @{}}
+%	\rowcolor[gray]{.9}
+	\textbf{Complex Vector Linear} \newline \vspace{-3pt} {\small Fourier Crystal Optics} & \textbf{Analytic solution} \colorbox{white}{\small $ {\color{blue} \boldsymbol{E} \! \left( \boldsymbol r \right)} $} to \dbox{\colorbox{white}{\small $\left[ \left( \boldsymbol{\nabla} \times \right)^2 - k^{2}_{0} \;\! \bar{\bar{\boldsymbol{\varepsilon}}} \;\! \cdot \right] \! {\color{blue} \boldsymbol{E} \! \left( \boldsymbol r \right)} = \boldsymbol{0}$}} \textbf{where} \colorbox{white}{$\varepsilon_{ij} \in \mathbb{C}$} & 2023.02 \\ \Gap\Gap
 \end{tabularx}
 \\
-\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{10.6cm} @{\extracolsep{\fill}} C{2.65cm} @{}}
-	\rowcolor[gray]{.9}
-	\textbf{Real Scalar Nonlinear} Fourier Crystal Optics & Analytic solution {\small $ \boldsymbol{E} \! \left( \boldsymbol r \right) $} to {\small $\left( \boldsymbol{\nabla}^2 - k^{2}_{3} \right) \! \boldsymbol{E}_3 \! \left( \boldsymbol r \right) = \boldsymbol{0}$} & 2017.03\hfill\textendash\hfill 2018.09 \newline \phantom{d} \newline \small Python\ |\ SiYuan\ |\ Mathematica \\ \Gap\Gap
+\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{12.0cm} @{\extracolsep{\fill}} r @{}}
+	%	\rowcolor[gray]{.9}
+	\textbf{Real Scalar Nonlinear} \newline \vspace{-3pt} {\small Fourier Crystal Optics} & \textbf{Closed-form} \colorbox{white}{\small $ {\color{blue} E_3 \! \left( \boldsymbol r \right)} $} in \dbox{\colorbox{white}{\small $\left( \boldsymbol{\nabla}^2 + k^{2}_{3} \right) \! {\color{blue} E_3 \! \left( \boldsymbol r \right)} = - k^{2}_{03} \;\! \chi(\boldsymbol r) E_1(\boldsymbol r) E_2(\boldsymbol r)$}} & 2022.02 \\ \Gap\Gap
 \end{tabularx}
+\\
+%\begin{tabularx}{\linewidth}{@{} R{4.1cm} @{\phantom{di}} !{\vrule width1.0pt} @{\phantom{di}} L{10.6cm} @{\extracolsep{\fill}} C{2.65cm} @{}}
+%%	\rowcolor[gray]{.9}
+%	\textbf{Real Scalar Nonlinear} \newline \vspace{-3pt} {\small Fourier Crystal Optics} & \textbf{Closed-form} {\small $ E_3 \! \left( \boldsymbol r \right) $} in {\small $\left( \boldsymbol{\nabla}^2 + k^{2}_{3} \right) \! E_3 \! \left( \boldsymbol r \right) = - k^{2}_{03} \;\! \chi(\boldsymbol r) E_1(\boldsymbol r) E_2(\boldsymbol r)$} & 2017.03\hfill\textendash\hfill 2018.09 \newline \phantom{d} \newline \small Python $|$ SiYuan $|$ Mathematica \\ \Gap\Gap
+%\end{tabularx}
 %\\
 %\begin{tabularx}{\linewidth}{@{\extracolsep{\fill}} p{3.0cm}!{\vrule width1.2pt}L{12.0cm}R{2.5cm}}
 %	\rowcolor[gray]{.9}
 %	\large \multirowcell{1}[0ex][r]{\textbf{Memberships}} \phantom{d} & test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test & 2017.03\textendash 2018.9 \\ \Gap
 %\end{tabularx}
 
-}{}{}
+%}{}{}
+}
+
 %!{\vrule width1.2pt}
 %\multirowcell{-2}[0ex][r]{\large \color{white} Academia} \phantom{d} 
 
