@@ -2,7 +2,7 @@
 \documentclass[letterpaper,11pt]{article}
 
 % Choose bibliography style for formatting list of publications
-\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\usepackage[style=ieee,url=true,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
 \bibliography{papers}
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
@@ -159,7 +159,33 @@
 \newcommand{\cmmnt}[1]{} % comment text among words somewhere in between
 \usepackage{dashbox}
 \newcommand\dboxed[1]{\dbox{\ensuremath{#1}}}
-\usepackage{etaremune}
+%\usepackage{etaremune}
+
+%\let\oldbibliography\thebibliography
+%\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+%\setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
+
+\usepackage{setspace}
+
+\usepackage{enumitem}
+\usepackage{refcount}
+\makeatletter
+\AddEnumerateCounter*{\reversearabic}{\@reversearabic}{2}
+\newcommand{\reversearabic}[1]{\expandafter\@reversearabic\csname c@#1\endcsname}
+\newcommand{\@reversearabic}[1]{%
+	\number\numexpr\getrefnumber{this@etaremune@\romannumeral\c@etaremune}-#1+1\relax
+}
+\newcounter{etaremune}
+\newenvironment{etaremune}[1][]{%
+	\stepcounter{etaremune}%
+	\begin{enumerate}[label=\reversearabic*.,#1]%
+	}{%
+		\edef\@currentlabel{\the\csname c@\@enumctr\endcsname}%
+		\label{this@etaremune@\romannumeral\c@etaremune}%
+	\end{enumerate}%
+}
+\makeatother
+
 
 \boldname{Surname}{Name}{N.}
 
