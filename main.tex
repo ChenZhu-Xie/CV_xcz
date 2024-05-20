@@ -21,6 +21,9 @@
 %\DeclareFieldFormat{doilink}{
 %	\iffieldundef{doi}{#1}
 %{\href{http://dx.doi.org/\thefield{url}}{#1}}}
+\DeclareFieldFormat*{title}{\mkbibitalic{#1}}
+\DeclareFieldFormat*{citetitle}{\mkbibitalic{#1}}
+%https://tex.stackexchange.com/questions/454672/biblatex-journal-name-non-italic
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
 % \def\theme{MidnightBlue}
@@ -105,7 +108,13 @@
 %	;
 %}
 
+%\let\oldbibliography\thebibliography
+%\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
+	%\setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
+\usepackage{setspace}
+
 \usepackage{hyperref}
+%\usepackage[all]{hypcap}
 %\renewcommand*{\thefootnote}{\arabic{footnote}}
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
 %\usepackage{mdframed}
@@ -142,6 +151,61 @@
 %	\gdef\tfn@fnt{0}%
 %}
 %\makeatother
+
+%-————————————————————————————— solve problem "forward jump into the top of the next page"
+\makeatletter % https://tex.stackexchange.com/questions/62259/change-reference-position-for-footnote-link
+
+% distinguish between footnote marks in the text and in the footnotes themselves!
+\let\hyperfoot@oldmakefntext\@makefntext
+\renewcommand*{\@makefntext}{%
+	\let\hyperfoot@base@makefnmark\@makefnmark
+	\let\@makefnmark\hyperfoot@infootnote@makefnmark
+	\hyperfoot@oldmakefntext}
+
+% set the hypertarget (through \hyper@@anchor) before placing \@thefnmark
+\newcommand*{\hyperfoot@infootnote@makefnmark}{%
+	\fn@settarget
+	\hyperfoot@base@makefnmark
+}
+
+\@ifpackageloaded{footnotebackref}{%
+	\ifFootnoteBackref@numberlinked
+	\let\hyperfoot@oldmakefntext\BHFN@OldMakefntext% undo their patch
+	\renewcommand\hyperfoot@infootnote@makefnmark{%... and merge with ours
+		\fn@settarget
+		\mbox{\textsuperscript{\normalfont%
+				\hyperref[\BackrefFootnoteTag]{\@thefnmark}}}\,}%
+	\fi
+}{} % https://tex.stackexchange.com/questions/62259/change-reference-position-for-footnote-link
+
+
+% reset hyperref's overriding of \@footnotetext, which basically just adds the \hyper@@anchor as part of the footnote text
+\long\def\@footnotetext#1{%
+	\H@@footnotetext{#1}}
+% and put the hyperref magic into \fn@settarget instead
+% note that we set the anchor text to be \relax. previously, it was sometimes (=when allowing links to be nested) the footnote text. I don't actually know what the effect is of having anchor text... but apparently no drivers support nesting at the moment anyway.
+\newcommand\fn@settarget{% a form of this was previously part of hyperref's \@footnotetext
+	%\message{^^J^^J**setting target!**^^J^^J}% we should only see as many 'setting target' messages in the log as there are footnotes!
+	\ifHy@nesting
+	\expandafter\ltx@firstoftwo
+	\else
+	\expandafter\ltx@secondoftwo
+	\fi
+	{%
+		\expandafter\hyper@@anchor\expandafter{%
+			\Hy@footnote@currentHref
+		}{\relax}%
+	}{%
+		\Hy@raisedlink{%
+			\expandafter\hyper@@anchor\expandafter{%
+				\Hy@footnote@currentHref
+			}{\relax}%
+		}%
+		\let\@currentHref\Hy@footnote@currentHref
+		\let\@currentlabelname\@empty
+	}%
+} % https://tex.stackexchange.com/questions/62259/change-reference-position-for-footnote-link
+%-————————————————————————————— solve problem "forward jump into the top of the next page"
 
 \usepackage{footnotebackref}
 %% ------------------------------------------------
@@ -221,14 +285,8 @@
 \newcommand{\cmmnt}[1]{} % comment text among words somewhere in between
 \usepackage{dashbox}
 \newcommand\dboxed[1]{\dbox{\ensuremath{#1}}}
+
 %\usepackage{etaremune}
-
-%\let\oldbibliography\thebibliography
-%\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
-%\setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
-
-\usepackage{setspace}
-
 \usepackage{enumitem}
 \usepackage{refcount}
 \makeatletter
