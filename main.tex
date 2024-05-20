@@ -2,8 +2,25 @@
 \documentclass[letterpaper,11pt]{article}
 
 % Choose bibliography style for formatting list of publications
-\usepackage[style=ieee,url=true,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
-\bibliography{papers}
+%\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\usepackage[style=phys,url=false,doi=false,maxcitenames=99,sorting=ydnt,dashed=false]{biblatex}
+%\AtEveryBibitem{\clearfield{month}}
+%\AtEveryCitekey{\clearfield{month}}
+%\AtEveryBibitem{\clearname{editor}}
+%\AtEveryCitekey{\clearname{editor}}
+%\AtEveryBibitem{\clearlist{location}}
+%\AtEveryCitekey{\clearlist{location}}
+%\bibliography{papers}
+
+%\AtEveryBibitem{\clearfield{urldate}}
+%\AtEveryCitekey{%
+%	\clearfield{urldate}%
+%}
+\addbibresource{papers.bib}% allows you to specify dirs, while ".bib" is needed (more detailed than \bibliography)
+
+%\DeclareFieldFormat{doilink}{
+%	\iffieldundef{doi}{#1}
+%{\href{http://dx.doi.org/\thefield{url}}{#1}}}
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
 % \def\theme{MidnightBlue}
@@ -187,12 +204,13 @@
 \makeatother
 
 
-\boldname{Surname}{Name}{N.}
+%\boldname{Surname}{Name}{N.}
+\boldname{Xie}{Chenzhu}{C.}
 
 \begin{document}
 
 % Heading
-\headinginline{Chen-Zhu Xie \hfill \textbf{\songti 谢\;\!尘\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}
+\headinginline{Chen-Zhu Xie \hfill \textbf{\youyuan 谢\;\!尘\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}
 		谢尘竹\end{CJK*}}\\ \cmmnt{\color{color-detail} test}}{
 	Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}{\color{youtube_red}\faYoutube}} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}{\color{linkedin_blue}\faLinkedin}} \\ 
 	Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height} {\color{orcid_green}\aiOrcid}} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}{\color{google_blue}\aiGoogleScholar}} \\

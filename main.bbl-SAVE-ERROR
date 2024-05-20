@@ -19,85 +19,221 @@
 
 \refsection{0}
   \datalist[entry]{ydnt/global//global/global/global}
-    \entry{secondPaper}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=4bb983b68767bfb7760064c0db4691d7}{%
-           family={Surname},
-           familyi={S\bibinitperiod},
-           given={Name},
-           giveni={N\bibinitperiod}}}%
-        {{hash=a4d3809df313d2c759f2c0951a4cbaaa}{%
-           family={Person},
-           familyi={P\bibinitperiod},
-           given={Sample},
+    \entry{chenLaserNanoprinting3D2023a}{article}{}{}
+      \name{author}{14}{}{%
+        {{hash=9ee833344b4dd8134c19f7ab89d9b5e0}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=333a405616853d16f0f617b21d2601a9}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xiaoyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=b95aec36eaf6905aa41374ac96bef418}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tianxin},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a82f7b211fe415c0eccfd31925edc866}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c6449f8f9938e9ca7e7303b780253bc0}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Dunzhao},
+           giveni={D\bibinitperiod}}}%
+        {{hash=043337114d975932b424fbe3448a56d1}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Jianan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f182774ef31d2a885629c81e922238ec}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Junjie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ad221bd7ab7d0e6b02a72e13594ba6f3}{%
+           family={Cui},
+           familyi={C\bibinitperiod},
+           given={Xuejing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=939e2bc39f4b2971d24d5b175bd5f8d7}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Xiaoyan},
+           giveni={X\bibinitperiod}}}%
+        {{hash=72a5e489700c4a3102878620b75bafe2}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Chenzhu},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b0e12eee0463ac9ff036ddfad8bcc943}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Shuang},
            giveni={S\bibinitperiod}}}%
+        {{hash=0a61801e6e881a259d95df9149ad7fea}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Shining},
+           giveni={S\bibinitperiod}}}%
+        {{hash=517b82f0954f8c9eb7c168455870a12a}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Min},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2c81656c924858824dfb10d50423b77a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
       }
-      \strng{namehash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{fullhash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{fullhashraw}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{bibnamehash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{authorbibnamehash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{authornamehash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{authorfullhash}{2074f2ae29e8107aca0dd86f33ccf5ff}
-      \strng{authorfullhashraw}{2074f2ae29e8107aca0dd86f33ccf5ff}
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{5949c83b2e441a3fdd38f2c1445b1ecb}
+      \strng{fullhash}{5949c83b2e441a3fdd38f2c1445b1ecb}
+      \strng{fullhashraw}{5949c83b2e441a3fdd38f2c1445b1ecb}
+      \strng{bibnamehash}{8cbf968798653d709a28d719dd5c19c2}
+      \strng{authorbibnamehash}{8cbf968798653d709a28d719dd5c19c2}
+      \strng{authornamehash}{5949c83b2e441a3fdd38f2c1445b1ecb}
+      \strng{authorfullhash}{5949c83b2e441a3fdd38f2c1445b1ecb}
+      \strng{authorfullhashraw}{5949c83b2e441a3fdd38f2c1445b1ecb}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2020 {{Placeholder Conference Title}}}
-      \field{eventtitle}{2020 {{Placeholder Conference Title}}}
-      \field{month}{4}
-      \field{title}{{{Placeholder Paper Title}}}
-      \field{year}{2020}
+      \field{day}{8}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{1}
+      \field{shortjournal}{Nat Commun}
+      \field{title}{Laser Nanoprinting of {{3D}} Nonlinear Holograms beyond 25000 Pixels-per-Inch for Inter-Wavelength-Band Information Processing}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{14}
+      \field{year}{2023}
       \field{dateera}{ce}
-      \true{nocite}
-      \field{pages}{1234\bibrangedash 1235}
-      \range{pages}{2}
+      \field{urldateera}{ce}
+      \field{pages}{5523}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-023-41350-2
+      \endverb
+      \verb{file}
+      \verb E:\Application\Organizer\Zotero\Data\storage\R4F96XT7\2023 - Laser nanoprinting of 3D nonlinear holograms beyond 25000 pixels-per-inch for inter-wavelength-band information processing - Nature Communications - Chen et al.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41467-023-41350-2
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41467-023-41350-2
+      \endverb
     \endentry
-    \entry{firstPaper}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=a4d3809df313d2c759f2c0951a4cbaaa}{%
-           family={Person},
-           familyi={P\bibinitperiod},
-           given={Sample},
-           giveni={S\bibinitperiod}}}%
-        {{hash=a4d3809df313d2c759f2c0951a4cbaaa}{%
-           family={Person},
-           familyi={P\bibinitperiod},
-           given={Sample},
-           giveni={S\bibinitperiod}}}%
-        {{hash=4bb983b68767bfb7760064c0db4691d7}{%
-           family={Surname},
-           familyi={S\bibinitperiod},
-           given={Name},
-           giveni={N\bibinitperiod}}}%
-        {{hash=a4d3809df313d2c759f2c0951a4cbaaa}{%
-           family={Person},
-           familyi={P\bibinitperiod},
-           given={Sample},
-           giveni={S\bibinitperiod}}}%
+    \entry{guoSpatiallyStructuredModeMultiplexing2023a}{article}{}{}
+      \name{author}{11}{}{%
+        {{hash=f182774ef31d2a885629c81e922238ec}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Junjie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1ae021bc4bdddae85787acb50d5237d8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yipeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=27dfc5d4754ab8d88dfd8829759a8109}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a131451414f44c3bb1899d219cf4d064}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Luyi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9ee833344b4dd8134c19f7ab89d9b5e0}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9608beed4a3a1cbe622f7eb435b3392a}{%
+           family={Mao},
+           familyi={M\bibinitperiod},
+           given={Danjian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=72a5e489700c4a3102878620b75bafe2}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Chenzhu},
+           giveni={C\bibinitperiod}}}%
+        {{hash=118c76248ea663fc6d6a337f1dfb811c}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhenhua},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0e92842027833e5dcbc2d2a95f5593e7}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Xuewei},
+           giveni={X\bibinitperiod}}}%
+        {{hash=517b82f0954f8c9eb7c168455870a12a}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Min},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2c81656c924858824dfb10d50423b77a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
       }
-      \strng{namehash}{a636e325b54a08c8cc750d0f6373ba67}
-      \strng{fullhash}{8ea6ed2cbda58cee42968f201cfd9967}
-      \strng{fullhashraw}{8ea6ed2cbda58cee42968f201cfd9967}
-      \strng{bibnamehash}{8ea6ed2cbda58cee42968f201cfd9967}
-      \strng{authorbibnamehash}{8ea6ed2cbda58cee42968f201cfd9967}
-      \strng{authornamehash}{a636e325b54a08c8cc750d0f6373ba67}
-      \strng{authorfullhash}{8ea6ed2cbda58cee42968f201cfd9967}
-      \strng{authorfullhashraw}{8ea6ed2cbda58cee42968f201cfd9967}
+      \list{publisher}{1}{%
+        {American Chemical Society}%
+      }
+      \strng{namehash}{a7712ebac0adc746e449e2d4745e82fd}
+      \strng{fullhash}{a7712ebac0adc746e449e2d4745e82fd}
+      \strng{fullhashraw}{a7712ebac0adc746e449e2d4745e82fd}
+      \strng{bibnamehash}{3d08c1ace84a9231f9db422fb4698bd9}
+      \strng{authorbibnamehash}{3d08c1ace84a9231f9db422fb4698bd9}
+      \strng{authornamehash}{a7712ebac0adc746e449e2d4745e82fd}
+      \strng{authorfullhash}{a7712ebac0adc746e449e2d4745e82fd}
+      \strng{authorfullhashraw}{a7712ebac0adc746e449e2d4745e82fd}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2018 {{Placeholder Conference Title}}}
-      \field{eventtitle}{2018 {{Placeholder Conference Title}}}
-      \field{month}{4}
-      \field{title}{{{Placeholder Paper Title}}}
-      \field{year}{2018}
+      \field{day}{15}
+      \field{journaltitle}{ACS Photonics}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{ACS Photonics}
+      \field{title}{Spatially {{Structured-Mode Multiplexing Holography}} for {{High-Capacity Security Encryption}}}
+      \field{urlday}{19}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{10}
+      \field{year}{2023}
       \field{dateera}{ce}
-      \true{nocite}
-      \field{pages}{1234\bibrangedash 1235}
-      \range{pages}{2}
+      \field{urldateera}{ce}
+      \field{pages}{757\bibrangedash 763}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1021/acsphotonics.2c01943
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1021/acsphotonics.2c01943
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1021/acsphotonics.2c01943
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
