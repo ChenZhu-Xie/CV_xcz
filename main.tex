@@ -3,7 +3,7 @@
 
 % Choose bibliography style for formatting list of publications
 %\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
-\usepackage[style=phys,url=false,doi=false,maxcitenames=99,sorting=ydnt,dashed=false]{biblatex}
+\usepackage[style=phys,url=false,doi=false,maxcitenames=99,sorting=ydnt]{biblatex}
 %\AtEveryBibitem{\clearfield{month}}
 %\AtEveryCitekey{\clearfield{month}}
 %\AtEveryBibitem{\clearname{editor}}
@@ -143,6 +143,51 @@
 %}
 %\makeatother
 
+\usepackage{footnotebackref}
+%% ------------------------------------------------
+%%a new counter to create an unambiguous label-tag
+%\newcounter{myHyperFootnoteCounter}
+%\makeatletter
+%% branch between the footnote with/without opt. argument
+%\def\myHyperFootnote{\@ifnextchar[\my@OptHyperFootnote\my@HyperFootnote}
+%
+%%define an new footnote without optional argument
+%\def\my@HyperFootnote#1{%
+%	\refstepcounter{myHyperFootnoteCounter}%
+%	\def\myFootnoteTag{hfn:\themyHyperFootnoteCounter}%
+%	\label{\myFootnoteTag}%
+%	%	\footnote{\hyperref[\myFootnoteTag]{$\wedge$}#1}%
+%	\footnote{\hyperref[\myFootnoteTag]{}#1}%
+%	%	\footnote{\hyperref[\myFootnoteTag]{$\ \ \ \ $}#1}%
+%}
+%
+%%%define an new footnote with optional argument
+%%\def\my@OptHyperFootnote[#1]#2{%
+%	%	\refstepcounter{myHyperFootnoteCounter}%
+%	%	\def\myFootnoteTag{hfn:\themyHyperFootnoteCounter}%
+%	%	\label{\myFootnoteTag}%
+%	%	% put the optional argument to the original `footnote`
+%	%%	\footnote[#1]{\hyperref[\myFootnoteTag]{$\wedge$}#2}% 
+%	%	\footnote[#1]{\hyperref[\myFootnoteTag]{}#2}%
+%	%%	\footnote[#1]{\hyperref[\myFootnoteTag]{$\ \ \ \ $}#2}%
+%	%}
+%
+%%if the footnote number should be the reference than redefine the footnote macro
+%\renewcommand\@makefntext[1]{%
+%	\noindent\makebox[1.8em][r]{%
+%		\mbox{\textsuperscript{\normalfont\hyperref[\myFootnoteTag]{\@thefnmark}}}\,}#1%
+%	%	\noindent\makebox[0.65em][r]{%
+%		%	\mbox{{\normalfont\hyperref[\myFootnoteTag]{\@thefnmark}}}\,}#1%
+%	%	\noindent\parbox[t]{30em}{%
+%		%	\mbox{{\normalfont\hyperref[\myFootnoteTag]{\@thefnmark}}}\,}#1%
+%}
+%\makeatother
+%% ------------------------------------------------
+%\makeatletter  % \hypertarget的补丁：把链接地址统一提升一行的高度
+%\newcommand{\linkdest}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
+%\makeatother
+
+% ------------------------------------------------
 \usepackage{makecell}
 \NewExpandableDocumentCommand\XGap{m}{\noalign{\vskip #1}}
 \NewExpandableDocumentCommand\Gap{}{\XGap{3pt}}
@@ -203,7 +248,7 @@
 }
 \makeatother
 
-
+% ------------------------------------------------
 %\boldname{Surname}{Name}{N.}
 \boldname{Xie}{Chenzhu}{C.}
 
@@ -243,7 +288,7 @@
 \import{sections/}{publications.tex}
 \import{sections/}{experience.tex}
 
-\pagebreak
+%\pagebreak
 
 % Page Two
 \sidebyside
