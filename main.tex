@@ -23,6 +23,8 @@
 %{\href{http://dx.doi.org/\thefield{url}}{#1}}}
 \DeclareFieldFormat*{title}{\mkbibitalic{#1}}
 \DeclareFieldFormat*{citetitle}{\mkbibitalic{#1}}
+%\DeclareFieldFormat*{title}{\textbf{\mkbibitalic{#1}}}
+%\DeclareFieldFormat*{citetitle}{\textbf{\mkbibitalic{#1}}}
 %https://tex.stackexchange.com/questions/454672/biblatex-journal-name-non-italic
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
@@ -306,6 +308,17 @@
 }
 \makeatother
 
+\usepackage{forest}
+\usepackage{dirtree}
+%\DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{1.6pt} % by default
+\DTsetlength{0.2em}{1em}{0.2em}{0.5pt}{2.0pt} % by default
+% https://mirrors.mit.edu/CTAN/macros/generic/dirtree/dirtree.pdf
+\dirtree{%
+	.1 /.
+	.2 bin.
+	.2 home.dir.
+	.3 jeancome.
+}
 % ------------------------------------------------
 %\boldname{Surname}{Name}{N.}
 \boldname{Xie}{Chenzhu}{C.}
@@ -341,18 +354,20 @@
 \vspace{-1cm}
 \import{sections/}{education.tex}
 \vspace{-1.3cm}
-\import{sections/}{projects.tex}
-\import{sections/}{teaching.tex}
+\import{sections/}{personal_projects.tex}
+\import{sections/}{scientific_activities.tex}
+\vspace{-1.3cm}
 \import{sections/}{publications.tex}
-\import{sections/}{experience.tex}
+\import{sections/}{academic_focus.tex}
 
 %\pagebreak
 
 % Page Two
-\sidebyside
-    {\import{sections/}{skills.tex}}
-    {\import{sections/}{languages.tex}}
 \import{sections/}{awards.tex}
+\import{sections/}{research_projects.tex}
 \import{sections/}{extracurricular.tex}
+\sidebyside
+{\import{sections/}{skills.tex}}
+{\import{sections/}{languages.tex}}
 
 \end{document}
