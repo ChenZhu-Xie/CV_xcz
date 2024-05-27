@@ -64,7 +64,7 @@
 \newcommand{\headinginline}[2]{
     \begin{minipage}[t]{0.61\textwidth}
     \vspace*{\fill}
-    \Huge \textcolor{color-title}{#1}
+    \Huge \textcolor{black}{#1}
     \end{minipage}
     \begin{minipage}[t]{0.38\textwidth}
     \begin{flushright}
@@ -98,12 +98,28 @@
 }
 
 % Section titles
+%\titleformat{\section}{
+%    \scshape\raggedright\Large\color{color-title}}{}{0em}{}[\color{color-title}\titlerule
+%    \vspace{-\smallskipamount}]
 \titleformat{\section}{
-    \scshape\raggedright\Large\color{color-title}}{}{0em}{}[\color{color-title}\titlerule
-    \vspace{-\smallskipamount}]
+	\raggedright\LARGE\color{color-title}}{}{0em}{}[\color{color-title}\titlerule
+\vspace{-\smallskipamount}]
 
 % Footer
-\fancyfoot[R]{Page \thepage \hspace{1pt} of \hspace{0.5pt} \pageref{LastPage}}
+%\fancyhead[C]{\color{color-detail} 234}
+
+\fancyfoot[C]{\color{color-detail} Chen-Zhu Xie\ \textendash\ CV}
+
+\def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+
+\fancyfoot[L]{\color{color-detail} Last updated: \mydate}
+
+\fancyfoot[R]{\color{color-detail} Page \thepage \hspace{1pt} of \hspace{0.4pt} \pageref{LastPage}}
+
+
+
+
 
 % Lists
 \newcommand{\outerlist}[1]{
