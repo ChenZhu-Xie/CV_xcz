@@ -62,11 +62,11 @@
 
 % Inline heading
 \newcommand{\headinginline}[2]{
-    \begin{minipage}[t]{0.61\textwidth}
+    \begin{minipage}[t]{0.60\textwidth}
     \vspace*{\fill}
     \Huge \textcolor{black}{#1}
     \end{minipage}
-    \begin{minipage}[t]{0.38\textwidth}
+    \begin{minipage}[t]{0.39\textwidth}
     \begin{flushright}
     #2
     \end{flushright}
@@ -108,15 +108,18 @@
 % Footer
 %\fancyhead[C]{\color{color-detail} 234}
 
-\fancyfoot[C]{\color{color-detail} Chen-Zhu Xie\ \textendash\ CV}
+%\fancyfoot[C]{\color{color-detail} Chen-Zhu Xie\ \textendash\ CV}
+%\fancyfoot[C]{\color{color-detail} Chenzhu Xie $|$ 谢尘竹}
+\fancyfoot[C]{\color{color-detail} Chenzhu Xie}
 
 \def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
 \def\twodigits#1{\ifnum#1<10 0\fi\the#1}
 
-\fancyfoot[L]{\color{color-detail} Last updated: \mydate}
+%\fancyfoot[L]{\color{color-detail} Last updated: \mydate}
+\fancyfoot[L]{\color{color-detail} CV $|$ \mydate}
 
-\fancyfoot[R]{\color{color-detail} Page \thepage \hspace{1pt} of \hspace{0.4pt} \pageref{LastPage}}
-
+%\fancyfoot[R]{\color{color-detail} Page \thepage \hspace{1pt} of \hspace{0.4pt} \pageref{LastPage}}
+\fancyfoot[R]{\color{color-detail} Page \thepage$/$\pageref{LastPage}}
 
 
 
