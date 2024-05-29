@@ -1,6 +1,7 @@
 \ProvidesPackage{simplecv}
 
 % Packages
+
 \usepackage[cm]{fullpage}                   % Margins
 \usepackage[hidelinks]{hyperref}            % Hyperlinks
 \usepackage{titlesec}                       % Title formatting
@@ -110,20 +111,35 @@
 
 %\fancyfoot[C]{\color{color-detail} Chen-Zhu Xie\ \textendash\ CV}
 %\fancyfoot[C]{\color{color-detail} Chenzhu Xie $|$ 谢尘竹}
-\fancyfoot[C]{\color{color-detail} Chenzhu Xie}
+%\fancyfoot[C]{\color{color-detail} Chenzhu Xie}
+%\fancyhead[C]{\color{color-detail} Chenzhu Xie}
+\fancyhead[C]{\color{color-detail} Curriculum Vitae}
 
 \def\mydate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
 \def\twodigits#1{\ifnum#1<10 0\fi\the#1}
 
 %\fancyfoot[L]{\color{color-detail} Last updated: \mydate}
-\fancyfoot[L]{\color{color-detail} CV $|$ \mydate}
 %\fancyfoot[L]{\color{color-detail} CV\_\mydate}
-
+%\fancyfoot[L]{\color{color-detail} CV $|$ \mydate}
+%\fancyhead[L]{\color{color-detail} CV $|$ \mydate}
+%\fancyhead[L]{\rule[-2ex]{0pt}{2ex} \color{color-detail} CV $|$ \mydate}
+%\fancyhead[L]{\vspace*{5mm} \color{color-detail} CV $|$ \mydate}
+%\fancyhead[L]{\color{color-detail} CV $|$ \mydate \newline}
+%\fancyhead[L]{\color{color-detail} CV $|$ \mydate \vskip 1cm}
+%{\vspace*{1mm} \fancyhead[L]{\color{color-detail} CV $|$ \mydate}}
+%\fancyhead[L]{\color{color-detail} CV $|$ \mydate}
+\fancyhead[L]{\color{color-detail} Chenzhu Xie}
 
 %\fancyfoot[R]{\color{color-detail} Page \thepage \hspace{1pt} of \hspace{0.4pt} \pageref{LastPage}}
+%\fancyfoot[R]{\color{color-detail} Page \thepage$/$\pageref{LastPage}}
+%\fancyhead[R]{\color{color-detail} Page \thepage$/$\pageref{LastPage}}
+\fancyhead[R]{\color{color-detail} \mydate}
+
 \fancyfoot[R]{\color{color-detail} Page \thepage$/$\pageref{LastPage}}
 
-
+\fancypagestyle{noheader}{%
+	\fancyhead{}%
+}
 
 
 % Lists

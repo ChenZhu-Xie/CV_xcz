@@ -1,6 +1,13 @@
 
 \documentclass[letterpaper,11pt]{article}
 
+%\setlength{\headsep}{2in}
+%\setlength{headsep=20mm}
+%\usepackage[headsep=0pt]{geometry}
+%\usepackage{geometry}
+%\geometry{a4paper,inner=12mm,outer=10mm,top=12.5mm,bottom=15mm,footskip=5mm}
+%\geometry{a4paper,bottom=4mm}d
+
 % Choose bibliography style for formatting list of publications
 %\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
 \usepackage[style=phys,url=false,doi=false,maxcitenames=99,sorting=ydnt]{biblatex}
@@ -28,7 +35,7 @@
 %https://tex.stackexchange.com/questions/454672/biblatex-journal-name-non-italic
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
-% \def\theme{MidnightBlue}
+%\def\theme{MidnightBlue}
 \def\theme{RedViolet}
 
 % More predefined colors can be found in 
@@ -37,6 +44,11 @@
 % https://commons.wikimedia.org/wiki/File:Kiara_Krit_passport.jpg
 
 \usepackage{simplecv}
+\setlength{\voffset}{-3mm}
+\setlength{\headsep}{12mm}
+\setlength{\topmargin}{-16mm}
+%\usepackage{geometry}
+%\geometry{a4paper,inner=12mm,outer=10mm,top=12.5mm,bottom=15mm,footskip=5mm,headsep=0pt}
 
 \usepackage{ctex}
 %\input{glyphtounicode}
@@ -145,15 +157,6 @@
 %	\@footnotemark\FTN@xftntext[#1]}
 %\makeatother
 
-%\usepackage{tablefootnote}
-%\makeatletter
-%\newcommand{\spewfootnotes}{%
-%	\tfn@tablefootnoteprintout%
-%	\global\let\tfn@tablefootnoteprintout\relax%
-%	\gdef\tfn@fnt{0}%
-%}
-%\makeatother
-
 %-————————————————————————————— solve problem "forward jump into the top of the next page"
 \makeatletter % https://tex.stackexchange.com/questions/62259/change-reference-position-for-footnote-link
 
@@ -209,7 +212,16 @@
 } % https://tex.stackexchange.com/questions/62259/change-reference-position-for-footnote-link
 %-————————————————————————————— solve problem "forward jump into the top of the next page"
 
-\usepackage{footnotebackref}
+%\usepackage{footnotebackref} % makes \footnote{} cannot be inside tabularx
+%\usepackage{tablefootnote}
+%\makeatletter
+%\newcommand{\spewfootnotes}{%
+	%		\tfn@tablefootnoteprintout%
+	%		\global\let\tfn@tablefootnoteprintout\relax%
+	%		\gdef\tfn@fnt{0}%
+	%	}
+%\makeatother
+
 %% ------------------------------------------------
 %%a new counter to create an unambiguous label-tag
 %\newcounter{myHyperFootnoteCounter}
@@ -320,11 +332,16 @@
 \usepackage{lipsum}
 
 
-\begin{document}
+\begin{document}\thispagestyle{noheader}
+%\thispagestyle{empty}
+%\thispagestyle{plain}
 
 % Heading
-\headinginline{Chen-Zhu Xie \hfill \textbf{\youyuan 谢\;\!尘\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}
-		谢尘竹\end{CJK*}}\\ \cmmnt{\color{color-detail} test}}{
+%\headinginline{Chen-Zhu Xie \hfill \textbf{\youyuan 谢\;\!尘\;\!竹}
+%\headinginline{Chen-Zhu Xie \hfill \textbf{\kaishu 谢\;\!尘\;\!竹}
+%\headinginline{Chen-Zhu Xie \hfill \textbf{\songti 谢\;\!尘\;\!竹}
+%\headinginline{Chen-Zhu Xie \hfill {\songti 谢\;\!尘\;\!竹}
+\headinginline{Chen-Zhu Xie \hfill {\kaishu 谢\;\!尘\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}谢尘竹\end{CJK*}}\\ \cmmnt{\color{color-detail} test}}{
 	Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}{\color{youtube_red}\faYoutube}} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}{\color{linkedin_blue}\faLinkedin}} \\ 
 	Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height} {\color{orcid_green}\aiOrcid}} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}{\color{google_blue}\aiGoogleScholar}} \\
 	Preference\cmmnt{Taste}: \href{https://music.163.com/\#/user?id=77327445}{{\raisebox{-0.2\height}{\includegraphics[totalheight=1em]{./logos/netease_music_macos_bigsur_icon_resize.png}}}} \\
@@ -348,23 +365,34 @@
 % }{photo.jpg}
 
 % Page One
-\vspace{-1cm}
+\vspace{-1.1cm}
 \import{sections/}{education.tex}
 \vspace{-1.3cm}
-\import{sections/}{personal_projects.tex}
+\import{sections/}{research_projects.tex}
 \import{sections/}{scientific_activities.tex}
 \vspace{-1.3cm}
 \import{sections/}{publications.tex}
 \import{sections/}{academic_focus.tex}
 
-%\pagebreak
+\pagebreak
 
 % Page Two
 \import{sections/}{awards.tex}
-\import{sections/}{research_projects.tex}
-\import{sections/}{extracurricular.tex}
-\sidebyside
-{\import{sections/}{skills.tex}}
-{\import{sections/}{languages.tex}}
+\vspace{-1.2cm}
+\import{sections/}{personal_projects.tex}
+%\import{sections/}{extracurricular.tex}
+%\sidebyside
+%{\import{sections/}{skills.tex}}
+%{\import{sections/}{languages.tex}}
+
+%\begin{multicols}{4} \raggedcolumns
+%	\import{sections/}{high_school.tex} \vfill \columnbreak
+%	\import{sections/}{undergraduate.tex} \vfill \columnbreak
+%	\import{sections/}{postgraduate.tex} \vfill \columnbreak
+%	\import{sections/}{phd.tex} \vfill
+%\end{multicols}
+
+\import{sections/}{personal_knowledge_management.tex}
+\import{sections/}{personal_career_management.tex}
 
 \end{document}
