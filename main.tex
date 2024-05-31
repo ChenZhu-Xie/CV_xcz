@@ -128,6 +128,7 @@
 \usepackage{setspace}
 
 \usepackage{hyperref}
+\newcommand{\mysection}[1]{\hyperref[#1]{#1}}
 %\usepackage[all]{hypcap}
 %\renewcommand*{\thefootnote}{\arabic{footnote}}
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
@@ -369,10 +370,12 @@
 \import{sections/}{education.tex}
 \vspace{-1.3cm}
 \import{sections/}{research_projects.tex}
+\fancyfoot[L]{\color{color-detail} {\color{\theme} \mysection{Education}} $|$ {\color{\theme} \mysection{Research}} $|$ \mysection{Activities} $|$ \mysection{Publications} $|$ \mysection{Focus} $|$ \mysection{Awards} $|$ \mysection{Projects} $|$ \mysection{History}}
 \import{sections/}{scientific_activities.tex}
 \vspace{-1.3cm}
 \import{sections/}{publications.tex}
 \import{sections/}{academic_focus.tex}
+\fancyfoot[L]{\color{color-detail} \mysection{Education} $|$ \mysection{Research} $|$ {\color{\theme} \mysection{Activities}} $|$ {\color{\theme} \mysection{Publications}} $|$ {\color{\theme} \mysection{Focus}} $|$ \mysection{Awards} $|$ \mysection{Projects} $|$ \mysection{History}}
 
 \pagebreak
 
@@ -392,7 +395,11 @@
 %	\import{sections/}{phd.tex} \vfill
 %\end{multicols}
 
-\import{sections/}{personal_knowledge_management.tex}
-\import{sections/}{personal_career_management.tex}
+%\import{sections/}{personal_knowledge_management.tex}
+%\import{sections/}{personal_career_management.tex}
+
+%\import{sections/}{time_line.tex}
+\import{sections/}{personal_history.tex}
+\fancyfoot[L]{\color{color-detail} \mysection{Education} $|$ \mysection{Research} $|$ \mysection{Activities} $|$ \mysection{Publications} $|$ \mysection{Focus} $|$ \mysection{Awards} $|$ {\color{\theme} \mysection{Projects}} $|$ {\color{\theme} \mysection{History}}}
 
 \end{document}
