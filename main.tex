@@ -1,6 +1,5 @@
 
-\documentclass[letterpaper,11pt]{article}
-
+\documentclass[letterpaper,10pt]{article}
 %\setlength{\headsep}{2in}
 %\setlength{headsep=20mm}
 %\usepackage[headsep=0pt]{geometry}
@@ -125,7 +124,13 @@
 %\let\oldbibliography\thebibliography
 %\renewcommand{\thebibliography}[1]{\oldbibliography{#1}
 	%\setlength{\itemsep}{0pt}} %Reducing spacing in the bibliography.
-\usepackage{setspace}
+%\usepackage{setspace}
+\usepackage{setspaceenhanced}
+%\usepackage[singlespacing=1.5]{setspaceenhanced}
+%\renewcommand{\baselinestretch}{0.9}
+%\renewcommand{\baselinestretch}{1.5}
+%\renewcommand{\arraystretch}{1.0}
+%\setstretch{1.5}
 
 \usepackage{hyperref}
 \newcommand{\mysection}[1]{\hyperref[#1]{#1}}
@@ -336,8 +341,16 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage{charter}
-\usepackage[scale=0.92]{XCharter}
+%\usepackage[scaled=0.92]{charter}
+\usepackage{charter}
+
+%\fontsize{13pt}{10pt}\selectfont
+%\renewcommand{\rmdefault}{bch}
+
+%\usepackage[]{xcharter-otf}
+%\usepackage[scale=0.92]{XCharter}
+%\usepackage[charter]{newtxmath}
+
 \usepackage{environ}
 \usepackage{tikz}
 \usetikzlibrary{calc,matrix}
@@ -422,15 +435,70 @@
 	\end{tikzpicture}
 }
 
+\newcounter{lineskkk}
+\def\endlrkkk{\stepcounter{lineskkk}\\}
+
+\newcounter{vtmlkkk}
+\setcounter{vtmlkkk}{0}
+
+\NewEnviron{vtimelinekkk}[1][]{%
+	\setcounter{lineskkk}{1}%
+	\stepcounter{vtmlkkk}%
+	\begin{tikzpicture}[column 1/.style={anchor=east},
+		column 2/.style={anchor=west},
+		text depth=0pt,text height=1ex,
+		row sep=1ex,
+		column sep=1em,
+		#1
+		]
+		\matrix(vtimeline\thevtmlkkk)[matrix of nodes]{\BODY};
+		\pgfmathtruncatemacro\endmtx{\thelineskkk-1}
+		
+		\path[timeline color st]
+		($(vtimeline\thevtmlkkk-1-1.north east)!0.5!(vtimeline\thevtmlkkk-1-2.north west)$)--
+		($(vtimeline\thevtmlkkk-\endmtx-1.south east)!0.5!(vtimeline\thevtmlkkk-\endmtx-2.south west)$);
+		
+		\foreach \x in {1,...,\endmtx}{
+			\node[circle,timeline color st, inner sep=0.15pt, draw=white, thick]
+			(vtimeline\thevtmlkkk-c-\x) at
+			($(vtimeline\thevtmlkkk-\x-1.east)!0.5!(vtimeline\thevtmlkkk-\x-2.west)$){};
+			\draw[timeline color st](vtimeline\thevtmlkkk-c-\x.east)--++(+3pt,0);
+		}
+		
+		\ifvtimelinetitle%
+		\draw[timeline color st]([yshift=\lineoffset]vtimeline\thevtmlkkk.north west)--
+		([yshift=\lineoffset]vtimeline\thevtmlkkk.north east);
+		
+		\node[anchor=west,yshift=16pt,font=\large]
+		at (vtimeline\thevtmlkkk-1-1.north west)
+		{\textsc{Timeline \thevtmlkkk}: \textit{\vtimelinetitle}};
+		\else%
+		\relax%
+		\fi%
+		
+		\ifvtimebottomline%
+		\draw[timeline color st]([yshift=-\lineoffset]vtimeline\thevtmlkkk.south west)--
+		([yshift=-\lineoffset]vtimeline\thevtmlkkk.south east);
+		\else%
+		\relax%
+		\fi%
+	\end{tikzpicture}
+}
 % ------------------------------------------------
 %\boldname{Surname}{Name}{N.}
 \boldname{Xie}{Chenzhu}{C.}
 \usepackage{lipsum}
 
+%\usepackage{fontsize}
+%\changefontsize[110]{12pt}{14pt}
+%\usepackage{anyfontsize}
 
 \begin{document}\thispagestyle{noheader}
 %\thispagestyle{empty}
 %\thispagestyle{plain}
+
+%\fontsize{10.12}{13.12}\selectfont % 设置字体大小为 14pt，行间距为 16pt
+\setstretch{1.5}
 
 % Heading
 %\headinginline{Chen-Zhu Xie \hfill \textbf{\youyuan 谢\;\!尘\;\!竹}
@@ -466,6 +534,7 @@
 \vspace{-1.3cm}
 \import{sections/}{research_projects.tex}
 \fancyfoot[L]{\color{color-detail} {\color{\theme} \mysection{Education}} $\bullet$ {\color{\theme} \mysection{Research}} $\bullet$ \mysection{Activities} $\bullet$ \mysection{Publications} $\bullet$ \mysection{Focus} $\bullet$ \mysection{Awards} $\bullet$ \mysection{Projects} $\bullet$ \mysection{Details}}
+
 \import{sections/}{scientific_activities.tex}
 \vspace{-1.3cm}
 \import{sections/}{publications.tex}
@@ -496,5 +565,5 @@
 %\import{sections/}{time_line.tex}
 \import{sections/}{historical_details.tex}
 \fancyfoot[L]{\color{color-detail} \mysection{Education} $\bullet$ \mysection{Research} $\bullet$ \mysection{Activities} $\bullet$ \mysection{Publications} $\bullet$ \mysection{Focus} $\bullet$ \mysection{Awards} $\bullet$ {\color{\theme} \mysection{Projects}} $\bullet$ {\color{\theme} \mysection{Details}}}
-
+	
 \end{document}
