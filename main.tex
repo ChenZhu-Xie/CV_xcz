@@ -327,6 +327,101 @@
 \DTsetlength{0.2em}{1em}{0.2em}{0.5pt}{2.0pt} % by default
 % https://mirrors.mit.edu/CTAN/macros/generic/dirtree/dirtree.pdf
 
+
+%% Code by Claudio:
+%% https://tex.stackexchange.com/a/197447/221452
+%% Uses code by Andrew:
+%% http://tex.stackexchange.com/a/28452/13304
+%% timeline code
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{charter}
+\usepackage[scale=0.92]{XCharter}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix}
+
+\makeatletter
+\let\matamp=&
+\catcode`\&=13
+\def&{%
+	\iftikz@is@matrix%
+	\pgfmatrixnextcell%
+	\else%
+	\matamp%
+	\fi%
+}
+\makeatother
+
+\newcounter{lines}
+\def\endlr{\stepcounter{lines}\\}
+
+\newcounter{vtml}
+\setcounter{vtml}{0}
+
+\newif\ifvtimelinetitle
+\newif\ifvtimebottomline
+
+\tikzset{
+	description/.style={column 2/.append style={#1}},
+	timeline color/.store in=\vtmlcolor,
+	timeline color=red!80!black,
+	timeline color st/.style={fill=\vtmlcolor,draw=\vtmlcolor},
+	use timeline header/.is if=vtimelinetitle,
+	use timeline header=false,
+	add bottom line/.is if=vtimebottomline,
+	add bottom line=false,
+	timeline title/.store in=\vtimelinetitle,
+	timeline title={},
+	line offset/.store in=\lineoffset,
+	line offset=4pt,
+}
+
+\NewEnviron{vtimeline}[1][]{%
+	\setcounter{lines}{1}%
+	\stepcounter{vtml}%
+	\begin{tikzpicture}[column 1/.style={anchor=east},
+		column 2/.style={anchor=west},
+		text depth=0pt,text height=1ex,
+		row sep=1ex,
+		column sep=1em,
+		#1
+		]
+		\matrix(vtimeline\thevtml)[matrix of nodes]{\BODY};
+		\pgfmathtruncatemacro\endmtx{\thelines-1}
+		
+		\path[timeline color st]
+		($(vtimeline\thevtml-1-1.north east)!0.5!(vtimeline\thevtml-1-2.north west)$)--
+		($(vtimeline\thevtml-\endmtx-1.south east)!0.5!(vtimeline\thevtml-\endmtx-2.south west)$);
+		
+		\foreach \x in {1,...,\endmtx}{
+			\node[circle,timeline color st, inner sep=0.15pt, draw=white, thick]
+			(vtimeline\thevtml-c-\x) at
+			($(vtimeline\thevtml-\x-1.east)!0.5!(vtimeline\thevtml-\x-2.west)$){};
+			\draw[timeline color st](vtimeline\thevtml-c-\x.west)--++(-3pt,0);
+		}
+		
+		\ifvtimelinetitle%
+		\draw[timeline color st]([yshift=\lineoffset]vtimeline\thevtml.north west)--
+		([yshift=\lineoffset]vtimeline\thevtml.north east);
+		
+		\node[anchor=west,yshift=16pt,font=\large]
+		at (vtimeline\thevtml-1-1.north west)
+		{\textsc{Timeline \thevtml}: \textit{\vtimelinetitle}};
+		\else%
+		\relax%
+		\fi%
+		
+		\ifvtimebottomline%
+		\draw[timeline color st]([yshift=-\lineoffset]vtimeline\thevtml.south west)--
+		([yshift=-\lineoffset]vtimeline\thevtml.south east);
+		\else%
+		\relax%
+		\fi%
+	\end{tikzpicture}
+}
+
 % ------------------------------------------------
 %\boldname{Surname}{Name}{N.}
 \boldname{Xie}{Chenzhu}{C.}
@@ -370,12 +465,12 @@
 \import{sections/}{education.tex}
 \vspace{-1.3cm}
 \import{sections/}{research_projects.tex}
-\fancyfoot[L]{\color{color-detail} {\color{\theme} \mysection{Education}} $|$ {\color{\theme} \mysection{Research}} $|$ \mysection{Activities} $|$ \mysection{Publications} $|$ \mysection{Focus} $|$ \mysection{Awards} $|$ \mysection{Projects} $|$ \mysection{History}}
+\fancyfoot[L]{\color{color-detail} {\color{\theme} \mysection{Education}} $\bullet$ {\color{\theme} \mysection{Research}} $\bullet$ \mysection{Activities} $\bullet$ \mysection{Publications} $\bullet$ \mysection{Focus} $\bullet$ \mysection{Awards} $\bullet$ \mysection{Projects} $\bullet$ \mysection{Details}}
 \import{sections/}{scientific_activities.tex}
 \vspace{-1.3cm}
 \import{sections/}{publications.tex}
 \import{sections/}{academic_focus.tex}
-\fancyfoot[L]{\color{color-detail} \mysection{Education} $|$ \mysection{Research} $|$ {\color{\theme} \mysection{Activities}} $|$ {\color{\theme} \mysection{Publications}} $|$ {\color{\theme} \mysection{Focus}} $|$ \mysection{Awards} $|$ \mysection{Projects} $|$ \mysection{History}}
+\fancyfoot[L]{\color{color-detail} \mysection{Education} $\bullet$ \mysection{Research} $\bullet$ {\color{\theme} \mysection{Activities}} $\bullet$ {\color{\theme} \mysection{Publications}} $\bullet$ {\color{\theme} \mysection{Focus}} $\bullet$ \mysection{Awards} $\bullet$ \mysection{Projects} $\bullet$ \mysection{Details}}
 
 \pagebreak
 
@@ -399,7 +494,7 @@
 %\import{sections/}{personal_career_management.tex}
 
 %\import{sections/}{time_line.tex}
-\import{sections/}{personal_history.tex}
-\fancyfoot[L]{\color{color-detail} \mysection{Education} $|$ \mysection{Research} $|$ \mysection{Activities} $|$ \mysection{Publications} $|$ \mysection{Focus} $|$ \mysection{Awards} $|$ {\color{\theme} \mysection{Projects}} $|$ {\color{\theme} \mysection{History}}}
+\import{sections/}{historical_details.tex}
+\fancyfoot[L]{\color{color-detail} \mysection{Education} $\bullet$ \mysection{Research} $\bullet$ \mysection{Activities} $\bullet$ \mysection{Publications} $\bullet$ \mysection{Focus} $\bullet$ \mysection{Awards} $\bullet$ {\color{\theme} \mysection{Projects}} $\bullet$ {\color{\theme} \mysection{Details}}}
 
 \end{document}
