@@ -271,6 +271,10 @@
 %\newcommand{\linkdest}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
 %\makeatother
 
+%\makeatletter  % \hypertarget的补丁：把链接地址统一提升一行的高度
+%\newcommand{\phantomdest}[1]{\Hy@raisedlink{\phantomsection}}
+%\makeatother
+
 % ------------------------------------------------
 \usepackage{makecell}
 \NewExpandableDocumentCommand\XGap{m}{\noalign{\vskip #1}}
@@ -327,9 +331,9 @@
 \makeatother
 
 %\usepackage{forest}
-\usepackage{dirtree}
+%\usepackage{dirtree}
 %\DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{1.6pt} % by default
-\DTsetlength{0.2em}{1em}{0.2em}{0.5pt}{2.0pt} % by default
+%\DTsetlength{0.2em}{1em}{0.2em}{0.5pt}{2.0pt} % by default
 % https://mirrors.mit.edu/CTAN/macros/generic/dirtree/dirtree.pdf
 
 
@@ -529,9 +533,9 @@
 % }{photo.jpg}
 
 % Page One
-\vspace{-1.1cm}
+\vspace{-1.2cm}
 \import{sections/}{education.tex}
-\vspace{-1.3cm}
+\vspace{-1.2cm}
 \import{sections/}{research_projects.tex}
 \fancyfoot[L]{\color{color-detail} {\color{\theme} \mysection{Education}} $\bullet$ {\color{\theme} \mysection{Research}} $\bullet$ \mysection{Activities} $\bullet$ \mysection{Publications} $\bullet$ \mysection{Focus} $\bullet$ \mysection{Awards} $\bullet$ \mysection{Projects} $\bullet$ \mysection{Details}}
 
