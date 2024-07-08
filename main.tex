@@ -52,6 +52,11 @@
 \usepackage{ctex}
 %\input{glyphtounicode}
 %\usepackage{CJKutf8}
+\usepackage{fontspec}
+%\setmainfont[Mapping=tex-text]{Noto Serif CJK SC}
+\setmainfont{LXGW WenKai GB}
+\setCJKmainfont{LXGW WenKai GB}
+
 \usepackage{tabularx}
 
 % \usepackage{hwemoji}
@@ -229,7 +234,7 @@
 %\makeatother
 
 %% ------------------------------------------------
-%%a new counter to create an unambiguous label-tag
+%a new counter to create an unambiguous label-tag
 %\newcounter{myHyperFootnoteCounter}
 %\makeatletter
 %% branch between the footnote with/without opt. argument
@@ -509,7 +514,7 @@
 %\headinginline{Chen-Zhu Xie \hfill \textbf{\kaishu 谢\;\!尘\;\!竹}
 %\headinginline{Chen-Zhu Xie \hfill \textbf{\songti 谢\;\!尘\;\!竹}
 %\headinginline{Chen-Zhu Xie \hfill {\songti 谢\;\!尘\;\!竹}
-\headinginline{Chen-Zhu Xie \hfill {\kaishu 谢\;\!尘\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}谢尘竹\end{CJK*}}\\ \cmmnt{\color{color-detail} test}}{
+\headinginline{Chen-Zhu Xie \hfill {谢\;\!\raisebox{-0.8pt}{尘}\;\!竹} \cmmnt{\begin{CJK*}{UTF8}{gbsn}谢尘竹\end{CJK*}}\\ \cmmnt{\color{color-detail} test}}{
 	Portfolio: \href{https://github.com/ChenZhu-Xie}{\raisebox{-0.05\height}\faGithub} \ \href{https://youtube.com/@xczphysics}{\raisebox{-0.05\height}{\color{youtube_red}\faYoutube}} \ \href{https://linkedin.com/in/xczphysics}{\raisebox{-0.05\height}{\color{linkedin_blue}\faLinkedin}} \\ 
 	Scholar: \href{https://orcid.org/my-orcid?orcid=0009-0003-8987-3640}{\raisebox{-0.05\height} {\color{orcid_green}\aiOrcid}} \ \href{https://scholar.google.com/citations?user=C86BbesAAAAJ}{\raisebox{-0.05\height}{\color{google_blue}\aiGoogleScholar}} \\
 	Preference\cmmnt{Taste}: \href{https://music.163.com/\#/user?id=77327445}{{\raisebox{-0.2\height}{\includegraphics[totalheight=1em]{./logos/netease_music_macos_bigsur_icon_resize.png}}}} \\
